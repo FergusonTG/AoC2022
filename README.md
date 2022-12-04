@@ -2,5 +2,4 @@
 
 My solutions. 
 
-So far I have completed days 1, 3
-
+So far I have completed up to day 4
