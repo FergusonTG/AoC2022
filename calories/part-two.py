@@ -3,18 +3,33 @@
 
 INPUT_FILE = "./input"
 
+def update_leaderboard(leaderboard, new_entry):
+    "Recreate leaderboard in situ."""
+    if leaderboard[2] > new_entry:
+        return
+    leaderboard[2] = new_entry
+    if leaderboard[1] > new_entry:
+        return
+    leaderboard[1:3] = leaderboard[2:0:-1]
+    if leaderboard[0] > new_entry:
+        return
+    leaderboard[0:2] = leaderboard[1::-1]
+
+
 def most(inputs):
     """Find the elf with the most calories."""
     max_cals = [0, 0, 0]
     cals = 0
     for l in (l.strip() for l in inputs):
         if not l:
-            max_cals = sorted(max_cals + [cals], reverse=True)[0:3]
+            update_leaderboard(max_cals, cals)
+            # max_cals = sorted(max_cals + [cals], reverse=True)[0:3]
             cals = 0
         else:
             cals += int(l, 10)
 
-    max_cals = sorted(max_cals + [cals], reverse=True)[0:3]
+    update_leaderboard(max_cals, cals)
+    # max_cals = sorted(max_cals + [cals], reverse=True)[0:3]
     return max_cals
 
 

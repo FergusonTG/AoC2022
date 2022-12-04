@@ -9,12 +9,12 @@ def most(inputs):
     cals = 0
     for l in (l.strip() for l in inputs):
         if not l:
-            if cals > max_cals:
-                max_cals = cals
+            max_cals = max(cals, max_cals)
             cals = 0
         else:
             cals += int(l, 10)
 
+    max_cals = max(cals, max_cals)
     return max_cals
 
 
