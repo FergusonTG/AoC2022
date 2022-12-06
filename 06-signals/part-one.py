@@ -32,8 +32,8 @@ def uniq(buffer):
 
 def process_stream(inpt):
     """Read a stream until four distinct bytes found."""
-    chars = bytearray(b' ') + bytearray(lpop(inpt, length=3))
-    count = 3
+    chars = bytearray(b' ') + bytearray(lpop(inpt, length=LENGTH_OF_MARKER - 1))
+    count = LENGTH_OF_MARKER - 1
 
     while not uniq(chars := chars[1:] + lpop(inpt)):
         count += 1
