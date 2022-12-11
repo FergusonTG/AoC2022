@@ -16,7 +16,10 @@ class Monitor:
 
         if self.cycles % 40 == 20:
             self.total += self.cycles * self.x_reg
-            print(f"{self.cycles:4}: {self.x_reg:4}, {self.cycles * self.x_reg:4} -> {self.total:6}")
+            print(
+                f"{self.cycles:4}: {self.x_reg:4}, {self.cycles * self.x_reg:4}"
+                + f"-> {self.total:6}"
+            )
 
     def addx(self, value):
         self.cycle()

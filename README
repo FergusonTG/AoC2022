@@ -1,0 +1,3 @@
+I tried to do this in Rust, but could not get round the borrow checker. How do I iterate a list but still have mutable access to a different member?
+
+
