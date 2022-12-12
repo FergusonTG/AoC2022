@@ -1,0 +1,22 @@
+Okay, not happy with this one at all.
+
+Part one: failed at the first attempt on the test data, but out
+of exasperation entered the input data result into the AoC page
+and it was correct. Later on I did debug one step which got the
+proper result on both data sets.
+
+Part two: my original idea was to run the Dijkstra backwards,
+from ‘E’ to the first ‘a’. This produced a correct result on the
+test data, but the input data result was too high. Next, I tried
+scanning for all the ‘a’ starting points; but got lots of heapq
+IndexError. It took me a while to realise that the input data has
+a number of valleys with walls too steep to climb out of, so
+I put in a break for those. Finally, I could not get an answer
+lower than the first one I did. After consulting the solutions
+megathread on Reddit, one possible solution in Python produced
+the same wrong answer as mine. The second one did result in
+a lower, correct, result, but I find it hard to see what it is
+doing that my attempt missed. 
+
+In short, lots of anguish, but I am not sure that I have really
+learned anything.
