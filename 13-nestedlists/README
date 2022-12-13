@@ -1,0 +1,14 @@
+
+At last one I could solve with basic Python skills!
+
+I considered parsing the lines element by element, but when the
+````eval```` function is available, why not use it with such
+tightly controlled input?
+
+Comparing had to be done element by element because I could not
+work out any way of using ```try … except``` to intercept
+comparisons between int and list.
+
+Finally I had to look up how to use ```functools.cmp_to_key```
+and I would love to know how it works!
+
